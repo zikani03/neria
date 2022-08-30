@@ -12,6 +12,274 @@ Simple AWS Lambda function that extracts named entities from articles. It uses t
 }
 ```
 
+
+## Example Response
+
+The above request should give the following response:
+
+```json
+{
+	"Entities": [
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi Vice President Salous Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "LOCATION",
+			"Name": "Southern Africa Development Community SADC"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "United Arab Emirates"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Lazarus Chakwera"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai Expo"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi Veep"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi National Day Saturday"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Centre"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi Investment"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Trade Centre"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Lands Act"
+		},
+		{
+			"EntityType": "ORGANIZATION",
+			"Name": "Ministry"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Lands"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "/>Malawi Veep"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Mary Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "United Arab Emirates"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Online Visa"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Africa"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Veep"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "UAE"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Emirates Airlines"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Africa"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai Expo"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "MITC"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Assistant Public"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Nellie Mononga"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Malawi"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Chilima"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Dubai"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Lazarus Chakwera"
+		},
+		{
+			"EntityType": "ORGANIZATION",
+			"Name": "COMESA Heads"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "State"
+		},
+		{
+			"EntityType": "GPE",
+			"Name": "Egypt"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Follow"
+		},
+		{
+			"EntityType": "PERSON",
+			"Name": "Subscribe Nyasa"
+		}
+	]
+}
+```
+
 ## Building 
 
 ```sh
