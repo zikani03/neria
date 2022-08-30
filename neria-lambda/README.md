@@ -7,8 +7,8 @@ Simple AWS Lambda function that extracts named entities from articles. It uses t
 
 ```json
 {
-    "url": "https://www.nyasatimes.com/chilima-says-malawi-is-a-best-investment-place-in-sadc-region-and-beyond/",
-    "selector": "#content div.nyasa-content"
+    "Url": "https://www.nyasatimes.com/chilima-says-malawi-is-a-best-investment-place-in-sadc-region-and-beyond/",
+    "Selector": "#content div.nyasa-content"
 }
 ```
 
