@@ -5,17 +5,33 @@ Simple AWS Lambda function that extracts named entities from articles. It uses t
 
 ## Example Event / Request
 
+### With Text from a URL 
+
 ```json
 {
     "Url": "https://www.nyasatimes.com/chilima-says-malawi-is-a-best-investment-place-in-sadc-region-and-beyond/",
-    "Selector": "#content div.nyasa-content"
+    "Selector": "#content div.nyasa-content",
+	"Text": ""
+}
+```
+
+### With Text you already have
+
+You can also send the actual text to avoid the scraping process.
+
+```json
+{
+    "Url": "",
+    "Selector": "",
+	"Text": "Some text ...."
 }
 ```
 
 
+
 ## Example Response
 
-The above request should give the following response:
+The above request with text from a URL should give the following response:
 
 ```json
 {

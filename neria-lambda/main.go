@@ -16,6 +16,7 @@ import (
 type NeriaEvent struct {
 	URL      string `json:"Url"`
 	Selector string `json:"Selector"`
+	Text     string `json:"Text"`
 }
 
 type NERResult struct {
@@ -36,25 +37,40 @@ func NeriaEventHandler(ctx context.Context, req events.LambdaFunctionURLRequest)
 		}, nil
 	}
 
-	if event.URL == "" {
-		return events.LambdaFunctionURLResponse{
-			StatusCode: 400,
-			Body:       fmt.Errorf("url cannot be empty").Error(),
-		}, nil
+	var dataString string
+
+	if event.Text == "" {
+		if event.URL == "" {
+			return events.LambdaFunctionURLResponse{
+				StatusCode: 400,
+				Body:       fmt.Errorf("url cannot be empty").Error(),
+			}, nil
+		}
+
+		if event.Selector == "" {
+			return events.LambdaFunctionURLResponse{
+				StatusCode: 400,
+				Body:       fmt.Errorf("selector cannot be empty").Error(),
+			}, nil
+		}
+		scrapedText, err := scrapeData(event.URL, event.Selector)
+		if err != nil {
+			return events.LambdaFunctionURLResponse{
+				StatusCode: 500,
+				Body:       err.Error(),
+			}, nil
+		}
+
+		dataString = scrapedText
+
+	} else {
+		dataString = event.Text
 	}
 
-	if event.Selector == "" {
+	if dataString == "" {
 		return events.LambdaFunctionURLResponse{
 			StatusCode: 400,
-			Body:       fmt.Errorf("selector cannot be empty").Error(),
-		}, nil
-	}
-
-	dataString, err := scrapeData(event.URL, event.Selector)
-	if err != nil {
-		return events.LambdaFunctionURLResponse{
-			StatusCode: 500,
-			Body:       err.Error(),
+			Body:       fmt.Errorf("the text content is empty or could not be read").Error(),
 		}, nil
 	}
 
