@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/rs/cors"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/jdkato/prose/v2"
 )
@@ -86,7 +87,6 @@ func NeriaEventHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Cache-Control", "...always cache...")
 	w.Write(data)
 }
 
@@ -123,7 +123,12 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	http.HandleFunc("/", NeriaEventHandler)
+	
+	mux := http.NewServeMux()
 
-	http.ListenAndServe(":"+port, nil)
+	mux.HandleFunc("/", NeriaEventHandler)
+
+	handler := cors.Default().Handler(mux)
+
+	http.ListenAndServe(":"+port, handler)
 }

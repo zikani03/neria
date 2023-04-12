@@ -11,6 +11,7 @@ require (
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/mingrammer/commonregex v1.0.1 // indirect
+	github.com/rs/cors v1.8.3 // indirect
 	github.com/stretchr/testify v1.7.2 // indirect
 	golang.org/x/net v0.0.0-20210916014120-12bc252f5db8 // indirect
 	gonum.org/v1/gonum v0.7.0 // indirect
