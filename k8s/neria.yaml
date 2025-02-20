@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: neria
-          image: zikani03/neria
+          image: "zikani03/neria:0.1.1"
           ports:
             - containerPort: 8080
               name: neria-port
