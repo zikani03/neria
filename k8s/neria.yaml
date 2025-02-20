@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: neria
+  labels:
+    app: neria
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neria
+  template:
+    metadata:
+      labels:
+        app: neria
+    spec:
+      containers:
+        - name: neria
+          image: zikani03/neria
+          ports:
+            - containerPort: 8080
+              name: neria-port
+
